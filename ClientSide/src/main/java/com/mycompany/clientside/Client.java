@@ -34,11 +34,27 @@ public class Client {
             for (int j = 0; j < nodes; j++)
                 adjMatrix[i][j] = input.nextInt();
 
+        // Display the entered matrix
+        System.out.println("This is the matrix that was entered\n");
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < nodes; i++) {
+            s.append((char)(i+ (int)'A') + ": ");
+            for (int j : adjMatrix[i]) {
+                s.append((j) + " ");
+            }
+            s.append("\n");
+        }
+        System.out.print(s.toString());
+
         // Input path length
+        System.out.println("Enter the path length");
         int pathLength = input.nextInt();
 
         // Input starting and ending nodes (convert alphabets to index values)
+        System.out.println("Enter the start node");
         int start = (int)Character.toUpperCase(input.next().charAt(0)) - (int)'A';
+
+        System.out.println("Enter the end node");
         int end = (int)Character.toUpperCase(input.next().charAt(0)) - (int)'A';
 
         // TCP Connection and communication with the server
@@ -54,6 +70,23 @@ public class Client {
 
             // Send data to the server
 
+            // Send Path length
+            dataOutput.writeInt(pathLength);
+            dataOutput.flush();
+
+            // Send start and end
+            dataOutput.writeInt(start);
+            dataOutput.flush();
+            dataOutput.writeInt(end);
+            dataOutput.flush();
+
+            // Send the number of nodes and the matrix
+            dataOutput.writeInt(nodes);
+            dataOutput.flush();
+            for (int i = 0; i < nodes; i++)
+                for (int j = 0; j < nodes; j++)
+                    dataOutput.writeInt(adjMatrix[i][j]);
+                    dataOutput.flush();
 
             // Read the input from the server
             double area = dataInput.readDouble();

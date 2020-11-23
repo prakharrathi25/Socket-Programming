@@ -33,11 +33,22 @@ public class Server {
                 DataOutputStream output = new DataOutputStream(socket.getOutputStream()); 
                 
                 // Read the data from the client (Receieve)
-                double radius = input.readDouble();
-                double area = radius * radius * Math.PI; 
+                int pathLength = input.readInt();
+                int start = input.readInt();
+                int end = input.readInt();
+
+                // Collect the nodes and the matrix through the data
+                int nodes = input.readInt();
+                int adjMatrix[][] = new int[nodes][nodes]; // Create the matrix
+                for (int i = 0; i < nodes; i++)
+                    for (int j = 0; j < nodes; j++)
+                        adjMatrix[i][j] = input.readInt();
+
+                // Print test outputs
+//                System.out.printf("Path Length = %d\n", pathLength);
 
                 // send data to the client
-                output.writeDouble(area);              
+                // output.writeDouble(area);
             }
         } catch(IOException e){}
     }
