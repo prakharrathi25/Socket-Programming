@@ -27,13 +27,18 @@ public class Client {
 
         // Declare the matrix
         int adjMatrix[][] = new int[nodes][nodes];
-
+        int entry;
         // Read the matrix values
         System.out.println("Enter the elements of the matrix");
         for (int i = 0; i < nodes; i++)
-            for (int j = 0; j < nodes; j++)
-                adjMatrix[i][j] = input.nextInt();
-
+            for (int j = 0; j < nodes; j++) {
+                entry = input.nextInt();
+                if(entry >= 1)
+                    entry = 1;
+                else
+                    entry = 0;
+                adjMatrix[i][j] = entry;
+            }
         // Display the entered matrix
         System.out.println("This is the matrix that was entered\n");
         StringBuilder s = new StringBuilder();
@@ -88,9 +93,21 @@ public class Client {
                     dataOutput.writeInt(adjMatrix[i][j]);
                     dataOutput.flush();
 
-            // Read the input from the server
-            double area = dataInput.readDouble();
-            System.out.println("Area is: " + area);
+            // Read the response input from the server
+            char response = dataInput.readChar();
+
+            // Convert start and end node to alphabets
+            char startNode = (char)((int)start + (int)'A');
+            char endNode = (char)((int)end + (int)'A');
+            String statement = "";
+
+            // Check response from the server
+            if(response == 'Y'){
+                statement = "Yes, there exists a path of length " + pathLength + " from node " + startNode + " to node " + endNode;
+            }else if(response == 'N'){
+                statement = "No, there exists no path of length " + pathLength + " from node " + startNode+ " to node " + endNode;
+            }
+            System.out.println(statement);
             clientSocket.close(); // close the connection
 
         } catch (IOException ex){}

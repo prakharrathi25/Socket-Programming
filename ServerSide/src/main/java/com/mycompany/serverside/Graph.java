@@ -55,9 +55,12 @@ public class Graph {
 
         // add source to path[]
         pathList.add(s);
-        int l = 2;
+        ArrayList<Integer> pathLength = new ArrayList<>();
+
         // Call recursive utility
-        printAllPathsUtil(s, d,l, isVisited, pathList);
+        printAllPathsUtil(s, d, pathLength, isVisited, pathList);
+
+        System.out.print(pathLength);
     }
 
     // A recursive function to print
@@ -66,13 +69,13 @@ public class Graph {
     // vertices in current path.
     // localPathList<> stores actual
     // vertices in the current path
-    private void printAllPathsUtil(Integer u, Integer d, Integer length, boolean[] isVisited,
+    private void printAllPathsUtil(Integer u, Integer d, List<Integer> lengths, boolean[] isVisited,
                                    List<Integer> localPathList)
     {
 
         if (u.equals(d)) {
-            if(localPathList.size() - 1 == length)
-                System.out.println("Desired length found");
+            // Add the path length to the path lengths list
+            lengths.add(localPathList.size()-1);
             System.out.println(localPathList);
             // if match found then no need to traverse more till depth
             return;
@@ -88,7 +91,7 @@ public class Graph {
                 // store current node
                 // in path[]
                 localPathList.add(i);
-                printAllPathsUtil(i, d, length, isVisited, localPathList);
+                printAllPathsUtil(i, d, lengths, isVisited, localPathList);
 
                 // remove current node
                 // in path[]
