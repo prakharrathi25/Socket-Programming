@@ -6,6 +6,7 @@
 package com.mycompany.serverside;
 
 /* Import java Packages */
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -27,6 +28,9 @@ public class Server extends JFrame{
     // Global adjmatrix
     int[][] globalAdjMatrix = new int[5][5];
 
+    // Global Filepath
+    static String filepath = "saved_image.jpg";
+
     Point A = new Point(220, 80);
     Point B = new Point(100, 180);
     Point C = new Point(340, 180);
@@ -44,12 +48,23 @@ public class Server extends JFrame{
     }
 
     public void paint(Graphics g) {
-        Image img = createImageWithText();
-        g.drawImage(img, 20, 20, this);
+        Image img = null;
+        try {
+            img = createImageWithText();
+            g.drawImage(img, 20, 20, this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
-    private Image createImageWithText() {
+    private Image createImageWithText() throws IOException {
         BufferedImage bufferedImage = new BufferedImage(500, 500, BufferedImage.TYPE_INT_RGB);
+
+//        yourComponent.paint(img.getGraphics());
+
+
+
         Graphics g = bufferedImage.getGraphics();
         g.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
         g.setColor(Color.green);
@@ -141,7 +156,11 @@ public class Server extends JFrame{
                 drawArrow(g, a1, b1, a2, b2);
             }
         }
+
+        File output_file = new File(filepath);
+        ImageIO.write(bufferedImage, "png", output_file);
         return bufferedImage;
+
     }
 
     public void drawArrow(Graphics g, int x1, int y1, int x2, int y2) {
@@ -299,12 +318,16 @@ public class Server extends JFrame{
                 else
                     response = 'N';
 
+                // Send the response
                 output.writeChar(response);
+
+                // Send the filepath to client
+                output.writeUTF(filepath);
 
                 /* Graph Visualisation */
                 JFrame frame = new Server(adjMatrix);
                 frame.setSize(500, 500);
-                frame.setVisible(true);
+                frame.setVisible(false);
                 frame.setTitle("Graph Image");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

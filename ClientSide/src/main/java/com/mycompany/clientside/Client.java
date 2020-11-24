@@ -97,6 +97,10 @@ public class Client {
             // Read the response input from the server
             char response = dataInput.readChar();
 
+            // Read the filepath
+            String filepath = dataInput.readUTF();
+            System.out.println(filepath);
+
             // Convert start and end node to alphabets
             char startNode = (char)((int)start + (int)'A');
             char endNode = (char)((int)end + (int)'A');
