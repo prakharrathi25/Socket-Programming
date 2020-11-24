@@ -18,8 +18,19 @@ I have made a one-way client and server communication. In this application, clie
 ## Directory Structure 
 
 1. **Server-Side**: To create the server application, I have created an instance of ServerSocket class. Here, we are using 6666 port number for the communication between the client and server. You may also choose any other port number. The accept() method waits for the client. If clients connects with the given port number, it returns an instance of Socket. The Server-Side folder contains server.java file which has the code for the server side connection. 
+
+* `Server.java`: Java Class that implements the Server-Side Code. Find [here](https://github.com/prakharrathi25/Socket-Programming/blob/main/ServerSide/src/main/java/com/mycompany/serverside/Server.java)
+
 2. **Client-Side**: To create the client application, I have created an instance of Socket class. Here, we need to pass the IP address or hostname of the Server and a port number. Here, we are using "localhost" because our server is running on same system. The Client-Side folder contains client.java file which has the code for the client side connection. 
+
+* `Client.java`: Java Class that implements the Client-Side Code. Find [here](https://github.com/prakharrathi25/Socket-Programming/blob/main/ClientSide/src/main/java/com/mycompany/clientside/Client.java)
 
 
 ## Problem being Solved
+
+Write a program that involves a client and a server. The client sends server 4 values, for example X, n, B, C where,  X is the adjacency matrix of a directed graph with 5 nodes A B C D E, and n is the length of the path from node B to node C.
+
+The server responds back with two responses:
+* positive Y response (or negative N response) if there exists (or doesn't exist) a path of length n from B to C.
+* the image of the directed graph with nodes A B C D E proving the validity of the response.
 
