@@ -14,7 +14,7 @@ public class Client {
         // Collect inputs from the user
         Scanner input = new Scanner(System.in);
 
-        // Read the matrix
+        /* Read the matrix */
         int nodes;
         System.out.println("Enter the number of nodes in the graph: ");
         nodes = input.nextInt();
@@ -39,6 +39,7 @@ public class Client {
                     entry = 0;
                 adjMatrix[i][j] = entry;
             }
+
         // Display the entered matrix
         System.out.println("This is the matrix that was entered\n");
         StringBuilder s = new StringBuilder();

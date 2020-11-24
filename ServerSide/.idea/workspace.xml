@@ -86,9 +86,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycompany.serverside.test1" />
+      <module name="ServerSide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mycompany.serverside.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.test1" />
         <item itemvalue="Application.Graph" />
       </list>
     </recent_temporary>
@@ -129,22 +143,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="150" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605592970579" />
-    <state width="1493" height="153" key="GridCell.Tab.0.bottom" timestamp="1606207036231">
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom" timestamp="1606239878831">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606207036231" />
-    <state width="1493" height="153" key="GridCell.Tab.0.center" timestamp="1606207036231">
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606239878831" />
+    <state width="1493" height="153" key="GridCell.Tab.0.center" timestamp="1606239878831">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606207036231" />
-    <state width="1493" height="153" key="GridCell.Tab.0.left" timestamp="1606207036231">
+    <state width="1493" height="153" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606239878831" />
+    <state width="1493" height="153" key="GridCell.Tab.0.left" timestamp="1606239878831">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606207036231" />
-    <state width="1493" height="153" key="GridCell.Tab.0.right" timestamp="1606207036231">
+    <state width="1493" height="153" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606239878831" />
+    <state width="1493" height="153" key="GridCell.Tab.0.right" timestamp="1606239878831">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606207036231" />
+    <state width="1493" height="153" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606239878831" />
+    <state x="299" y="87" key="Maven.ArtifactSearchDialog" timestamp="1606234175285">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="299" y="87" key="Maven.ArtifactSearchDialog/0.0.1536.864@0.0.1536.864" timestamp="1606234175285" />
     <state x="451" y="192" key="NewModule_or_Project.wizard" timestamp="1605592973280">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -157,5 +175,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606203727386" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606239771821">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606239771821" />
   </component>
 </project>
