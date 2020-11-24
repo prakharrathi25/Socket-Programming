@@ -6,13 +6,45 @@
 package com.mycompany.serverside;
 // Import java Packages 
 import java.io.*; 
-import java.net.*; 
+import java.net.*;
+import java.util.*;
 
 /**
  * Name: Prakhar Rathi 
  * Roll Number: 1810110169
  */
 public class Server {
+
+    // function to convert adjacency matrix to adjacency list
+    public static ArrayList<ArrayList<Integer>> mat_to_list(int[][] m){
+
+        // Collect number of vertices
+        int vertices = m[0].length;
+
+        // Declare an Array List
+        ArrayList<ArrayList<Integer>> adjListArray = new ArrayList<ArrayList<Integer>>(vertices);
+
+        // Create a new list for each vertex to store the vertices
+        for (int i = 0; i < vertices; i++) {
+            adjListArray.add(new ArrayList<Integer>());
+        }
+
+        // Store the vertices in the adjacency list
+        for (int i = 0; i < m[0].length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                if (m[i][j] >= 1) {
+                    adjListArray.get(i).add(j);
+                }
+            }
+        }
+
+        return adjListArray;
+
+    }
+
+    // Function to count all path lengths and compare with the given path length
+
+
     public static void main(String args[])throws Exception{
         try{
 
