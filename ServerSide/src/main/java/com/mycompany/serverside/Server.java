@@ -83,13 +83,11 @@ public class Server {
         // Recur to all the adjacent nodes for all the vertices
         for (Integer i : adjList[s]) {
             if (!hasVisited[i]) {
-                // store current node
-                // in path[]
+                // store current node in the path to begin traversal
                 funcPathList.add(i);
                 pathLengthDFS(adjList, i, d, lengths, hasVisited, funcPathList);
 
-                // remove current node
-                // in path[]
+                // remove current node from the path
                 funcPathList.remove(i);
             }
         }
@@ -129,9 +127,6 @@ public class Server {
                 for (int i = 0; i < nodes; i++)
                     for (int j = 0; j < nodes; j++)
                         adjMatrix[i][j] = input.readInt();
-
-                // Print test outputs
-//                System.out.printf("Path Length = %d\n", pathLength);
 
                 // Convert adjacency matrix to adjacency list
                 ArrayList<Integer>[] adjList = new ArrayList[nodes];
