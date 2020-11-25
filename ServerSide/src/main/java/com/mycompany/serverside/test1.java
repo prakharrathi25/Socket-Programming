@@ -1,16 +1,21 @@
 package com.mycompany.serverside;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class test1 extends JFrame {
 
+    static String filepath = "..\\Images\\saved_image.png";
+
     Point A = new Point(220, 80);
     Point B = new Point(100, 180);
-    Point C = new Point(340, 180);
-    Point D = new Point(140, 305);
+    Point D = new Point(340, 180);
+    Point C = new Point(140, 305);
     Point E = new Point(300, 305);
 
     int draw1[] = new int[25];
@@ -34,13 +39,13 @@ public class test1 extends JFrame {
         BufferedImage bufferedImage = new BufferedImage(500, 500, BufferedImage.TYPE_INT_RGB);
         Graphics g = bufferedImage.getGraphics();
         g.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
-        g.setColor(Color.yellow);
+        g.setColor(Color.green);
         g.fillOval(200, 50, 55, 55);
         g.fillOval(80, 150, 55, 55);
         g.fillOval(320, 150, 55, 55);
         g.fillOval(120, 275, 55, 55);
         g.fillOval(280, 275, 55, 55);
-        g.setColor(Color.black);
+        g.setColor(Color.blue);
         g.drawString("A", A.x, A.y);
         g.drawString("B", B.x, B.y);
         g.drawString("C", C.x, C.y);
@@ -123,6 +128,13 @@ public class test1 extends JFrame {
                 drawArrow(g, a1, b1, a2, b2);
             }
         }
+
+        File output_file = new File(filepath);
+        try {
+            ImageIO.write(bufferedImage, "png", output_file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return bufferedImage;
     }
 
@@ -157,7 +169,7 @@ public class test1 extends JFrame {
 
 
     public static void main(String[] args) {
-        int adj_mat[][] = new int[][] { { 0, 1, 0, 0, 0 }, { 1, 0, 1, 1, 1 }, { 1, 1, 0, 1, 1 }, { 1, 1, 1, 0, 1 },
+        int adj_mat[][] = new int[][] { { 0, 0, 1, 0, 0 }, { 1, 0, 1, 1, 1 }, { 1, 1, 0, 1, 1 }, { 1, 1, 1, 0, 1 },
                 { 1, 1, 1, 1, 0 }, };
         JFrame frame = new test1(adj_mat);
         frame.setSize(500, 500);

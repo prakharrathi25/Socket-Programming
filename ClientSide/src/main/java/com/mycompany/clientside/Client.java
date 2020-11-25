@@ -1,29 +1,50 @@
 package com.mycompany.clientside;
 
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Client {
+//import org.opencv.core.Core;
+//import org.opencv.core.Mat;
+//import org.opencv.imgcodecs.Imgcodecs;
 
-    // Main Function
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import javax.swing.text.html.ImageView;
+
+public class Client extends Component{
+
+    BufferedImage img;
+
+    public void paint(Graphics g) {
+        g.drawImage(img, 0, 0, null);
+    }
+
+    /* Function to load the image */
+    public Client(String filepath) {
+        try {
+            img = ImageIO.read(new File(filepath));
+        } catch (IOException e) {
+        }
+
+    }
+
+    /* Main Function */
     public static void main(String[] args) {
 
         // Collect inputs from the user
         Scanner input = new Scanner(System.in);
 
         /* Read the matrix */
-        int nodes;
-        System.out.println("Enter the number of nodes in the graph: ");
-        nodes = input.nextInt();
-
-        // Check if it's greater than 5
-        if(nodes > 5){
-            System.out.println("\nThe maximum allowed nodes are 5 so the value is set to 5.");
-            nodes = 5;
-        }
+        int nodes = 5;
+        System.out.println("Making a graph with 5 nodes\n");
 
         // Declare the matrix
         int adjMatrix[][] = new int[nodes][nodes];
@@ -99,7 +120,6 @@ public class Client {
 
             // Read the filepath
             String filepath = dataInput.readUTF();
-            System.out.println(filepath);
 
             // Convert start and end node to alphabets
             char startNode = (char)((int)start + (int)'A');
@@ -112,7 +132,23 @@ public class Client {
             }else if(response == 'N'){
                 statement = "No, there exists no path of length " + pathLength + " from node " + startNode+ " to node " + endNode;
             }
+
+            // Print the statement
             System.out.println(statement);
+
+            /* Load the image from the filepath */
+            JFrame f = new JFrame("Load Image Sample");
+
+            f.addWindowListener(new WindowAdapter(){
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+
+            f.add(new Client(filepath));
+            f.pack();
+            f.setVisible(true);
+
             clientSocket.close(); // close the connection
 
         } catch (IOException ex){}
