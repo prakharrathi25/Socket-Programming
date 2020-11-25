@@ -21,7 +21,7 @@ public class Client extends JFrame {
 
     public void paint(Graphics g) {
 
-        System.out.println("Painting the new image.");
+        System.out.println("Painting the new image");
 
         super.paint(g);
         Image img = global_img;

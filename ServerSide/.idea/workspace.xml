@@ -53,6 +53,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -62,6 +64,19 @@
   <component name="RunManager" selected="Application.Server">
     <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mycompany.serverside.Graph" />
+      <module name="ServerSide" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mycompany.serverside.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mycompany.serverside.GraphUtil" />
       <module name="ServerSide" />
       <extension name="coverage">
         <pattern>
@@ -102,6 +117,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.GraphUtil" />
         <item itemvalue="Application.test1" />
         <item itemvalue="Application.Graph" />
       </list>
@@ -143,22 +159,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="150" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605592970579" />
-    <state width="1493" height="153" key="GridCell.Tab.0.bottom" timestamp="1606248960532">
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom" timestamp="1606332182552">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606248960532" />
-    <state width="1493" height="153" key="GridCell.Tab.0.center" timestamp="1606248960532">
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1606327444341">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606248960532" />
-    <state width="1493" height="153" key="GridCell.Tab.0.left" timestamp="1606248960532">
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1536.864@0.0.1536.864" timestamp="1606327444341" />
+    <state width="1493" height="153" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1606332182552" />
+    <state width="1493" height="153" key="GridCell.Tab.0.center" timestamp="1606332182552">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606248960532" />
-    <state width="1493" height="153" key="GridCell.Tab.0.right" timestamp="1606248960532">
+    <state width="1493" height="153" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1606327444341">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="153" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606248960532" />
+    <state width="1493" height="153" key="GridCell.Tab.0.center.inPresentationMode/0.0.1536.864@0.0.1536.864" timestamp="1606327444341" />
+    <state width="1493" height="153" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1606332182552" />
+    <state width="1493" height="153" key="GridCell.Tab.0.left" timestamp="1606332182552">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="153" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1606327444341">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="153" key="GridCell.Tab.0.left.inPresentationMode/0.0.1536.864@0.0.1536.864" timestamp="1606327444341" />
+    <state width="1493" height="153" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1606332182552" />
+    <state width="1493" height="153" key="GridCell.Tab.0.right" timestamp="1606332182552">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="153" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1606327444341">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="153" key="GridCell.Tab.0.right.inPresentationMode/0.0.1536.864@0.0.1536.864" timestamp="1606327444341" />
+    <state width="1493" height="153" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1606332182552" />
     <state x="299" y="87" key="Maven.ArtifactSearchDialog" timestamp="1606234175285">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -171,13 +203,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="209" y="53" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1605592296249" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1606203727386">
+    <state x="425" y="197" key="run.anything.popup" timestamp="1606290652838">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606203727386" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606239771821">
+    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606290652838" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1606328017938">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606239771821" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1606328017938" />
   </component>
 </project>
