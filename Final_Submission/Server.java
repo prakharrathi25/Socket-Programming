@@ -28,9 +28,6 @@ public class Server extends JFrame{
     // Global adjmatrix
     static int[][] globalAdjMatrix = new int[5][5];
 
-    // Global Filepath for the image stored
-    static String filepath = "../saved_image.jpeg";
-
     // Declare global image
     static Image global_img;
 
@@ -40,13 +37,6 @@ public class Server extends JFrame{
 //    static DataInputStream input;
     static DataOutputStream output;
 
-//    /* Constructor to populate the global adjMatrix */
-//    Server(int[][] adj_mat) {
-//        for(int i=0; i<5; i++)
-//            for(int j=0; j<5; j++)
-//                globalAdjMatrix[i][j] = adj_mat[i][j];
-//    }
-
     /* function to convert adjacency matrix to adjacency list */
     public static ArrayList<Integer>[] mat_to_list(int[][] m){
 
@@ -55,7 +45,6 @@ public class Server extends JFrame{
 
         // Declare an Array
         ArrayList<Integer>[] adjList = new ArrayList[vertices];
-//        ArrayList<ArrayList<Integer>> adjList = new ArrayList<ArrayList<Integer>>(vertices);
 
         // Create a new list for each vertex to store the vertices
         for (int i = 0; i < vertices; i++) {
@@ -88,7 +77,6 @@ public class Server extends JFrame{
     // Overriding the paint function and including exception handling in the same
     public void paint(Graphics g) {
         global_img = createGraphImage();
-//        g.drawImage(img, 20, 20, this);
     }
 
     public static BufferedImage toBufferedImage(Image img)

@@ -12,11 +12,14 @@ import java.util.Scanner;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+/**
+ * Name: Prakhar Rathi
+ * Roll Number: 1810110169
+ */
+
 public class Client extends JFrame {
 
-    // Global Socket
-
-    BufferedImage img;
+    // Global Image
     static Image global_img;
 
     public void paint(Graphics g) {
@@ -25,7 +28,10 @@ public class Client extends JFrame {
 
         super.paint(g);
         Image img = global_img;
+
+        // Draw the image from the bytes
         g.drawImage(img, 50, 50, this);
+
     }
     /* Main Function */
     public static void main(String[] args) {
@@ -131,9 +137,9 @@ public class Client extends JFrame {
             dataInput.read(sizeAr);
 
             int size = ByteBuffer.wrap(sizeAr).asIntBuffer().get();
-            byte[] imageAr = new byte[size];
-            dataInput.read(imageAr);
-            BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageAr));
+            byte[] imageArray = new byte[size];
+            dataInput.read(imageArray);
+            BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageArray));
             global_img = image;
 
             JFrame frame = new Client();
@@ -141,7 +147,7 @@ public class Client extends JFrame {
             frame.setSize(1000, 1000);
             frame.setVisible(true);
 
-            System.out.println("Received Bytes" + image.getHeight() + "x" + image.getWidth() + ": " + System.currentTimeMillis());
+            System.out.println("Received Bytes " + image.getHeight() + "x" + image.getWidth() + " : " + System.currentTimeMillis());
 
             // Call the constructor to load image
             dataOutput.close();
